@@ -7,12 +7,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import ('./modules/MainModule/main.module').then(m => m.MainModule),
-    pathMatch: 'full'
   },
   {
     path: 'auth',
     loadChildren: () => import('./modules/AuthModule/auth.module').then(m => m.AuthModule),
-    pathMatch: 'full'
   },
   {
     path: '**',
