@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AuthModule } from './modules/AuthModule/auth.module';
+import { HomeComponent } from './modules/HomeModule/home.component';
+import { HomeModule } from './modules/HomeModule/home.module';
+import { MainComponent } from './modules/MainModule/main.component';
+import { MainModule } from './modules/MainModule/main.module';
+import { UserModule } from './modules/UserModule/user.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +17,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule,
+    MainModule,
+    HomeModule,
+    UserModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
