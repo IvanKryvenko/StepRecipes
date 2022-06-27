@@ -11,24 +11,30 @@ export class UserService {
         @InjectModel(User.name) private userModel: Model<UserDocument>,
     ) {}
 
-    async create(createUserDto: CreateUserDto): Promise<UserDocument> {
+    async create(createUserDto: CreateUserDto): Promise<any> {
+        if ((await this.userModel.find({ nickname: createUserDto.nickname })).length > 0) {
+            return {'message': 'User with such nickname already exist'}
+        } else if ((await this.userModel.find({ emailAddress: createUserDto.emailAddress })).length > 0) {
+            return {'message': 'User with such email already exist'}
+        }
+
         const createdUser = new this.userModel(createUserDto);
         return createdUser.save();
     }
 
-    findAll() {
-        return `This action returns all user`;
-    }
+    // findAll() {
+    //     return `This action returns all user`;
+    // }
 
-    findOne(id: number) {
-        return `This action returns a #${id} user`;
-    }
+    // findOne(id: number) {
+    //     return `This action returns a #${id} user`;
+    // }
 
-    update(id: number, updateUserDto: UpdateUserDto) {
-        return `This action updates a #${id} user`;
-    }
+    // update(id: number, updateUserDto: UpdateUserDto) {
+    //     return `This action updates a #${id} user`;
+    // }
 
-    remove(id: number) {
-        return `This action removes a #${id} user`;
-    }
+    // remove(id: number) {
+    //     return `This action removes a #${id} user`;
+    // }
 }

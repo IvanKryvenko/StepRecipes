@@ -17,8 +17,14 @@ export class User {
     @Prop({ required: true })
     emailAddress: string;
 
+    @Prop({ default: '' })
+    imageUrl: string;
+
     @Prop([String])
     likedList: string[] = [];
+
+    @Prop([String])
+    createdRecipes: string[] = [];
 }
 
 export const UserSchema = SchemaFactory.createForClass(User);
