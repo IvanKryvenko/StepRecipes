@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder,Validators,  FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, Validators,  FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-log-in-form',
@@ -18,7 +18,7 @@ export class LogInFormComponent {
 
   ngOnInit() {
 
-      this.logInForm = this.fb.group({
+    this.logInForm = this.fb.group({
         email: ['', [Validators.required, Validators.pattern('[a-z0-9]*')]],
         password: ['', [Validators.required, Validators.minLength(6)]]
     });
@@ -52,6 +52,7 @@ export class LogInFormComponent {
 
   numberOnly(event: { which: any; keyCode: any; }): boolean {
     const charCode = (event.which) ? event.which : event.keyCode;
+
     if (charCode > 31 && (charCode < 48 || charCode > 57)) {
       return false;
     }
