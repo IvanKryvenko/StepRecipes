@@ -1,0 +1,78 @@
+@import "../../../variables";
+
+
+.password-input,
+.login-input,
+.reg-input {
+    text-decoration: none;
+    outline: none;
+    padding: 1rem;
+    padding-left: 2rem;
+    border-radius: 2rem;
+    border: solid 0.1rem $purple;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: $purple;                                 
+    font-weight: 500;
+}
+
+.btn-login,
+.btn-register {
+    width: 12rem;
+    height: 3rem;
+    border-radius: 2rem;
+    border: solid 0.1rem $purple-dark;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.03rem;
+    color: $purple-dark-2;
+    background-color: $purple-light;
+    padding: 0.7rem;
+    margin-top: 0.7rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    cursor: pointer;
+    
+        &:hover {
+            background-color: $purple-light-2;
+        }
+}
+
+.loginForm { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading-form {
+    color: $white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.changeAction-btn {
+    background-color: transparent;
+    border: none;
+    color: $white;
+    font-weight: 400;
+    border-bottom: 0.01rem solid $white;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+.regForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
