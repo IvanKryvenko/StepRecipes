@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators,  FormControl, FormGroup } from '@angular/forms';
 
@@ -5,7 +6,6 @@ import { FormBuilder, Validators,  FormControl, FormGroup } from '@angular/forms
   selector: 'app-log-in-form',
   templateUrl: './log-in-form.component.html',
   styleUrls: ['./log-in-form.component.scss']
-  
 })
 export class LogInFormComponent {
 
@@ -14,7 +14,7 @@ export class LogInFormComponent {
 
   public actionType: 'signIn' | 'registration' = 'signIn';
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private auth: AuthService) { }
 
   ngOnInit() {
 
