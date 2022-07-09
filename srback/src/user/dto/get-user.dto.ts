@@ -1,9 +1,7 @@
-import { ObjectId } from "mongoose";
-
 export class GetUserDto {
     fullName: string;
     username: string;
-    _id: ObjectId;
+    id: string;
     emailAddress: string;
     imageUrl: string;
 }
