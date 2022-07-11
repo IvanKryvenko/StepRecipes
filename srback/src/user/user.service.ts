@@ -44,7 +44,6 @@ export class UserService {
             let userId = `user:${uuidv4()}`;
 
             while (!(await this.userModel.find({ id: userId }))) {
-                console.log('there');
                 userId = `user:${uuidv4()}`;
             }
 

@@ -29,7 +29,7 @@ export class AuthService {
 
     async login(username: any) {
         const user = await this.userService.findOne(username);
-        console.log(user);
+        
         const payload = {
             username: user.username,
             fullName: user.fullName,

@@ -5,7 +5,7 @@ import {
     Body,
     Patch,
     Param,
-    Delete,
+    Delete
 } from '@nestjs/common';
 import { RecipeService } from './recipe.service';
 import { CreateRecipeDto } from './dto/create-recipe.dto';
