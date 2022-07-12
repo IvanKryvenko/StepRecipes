@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators,  FormControl, FormGroup } from '@angular/forms';
@@ -12,50 +13,68 @@ export class LogInFormComponent {
   logInForm!: FormGroup
   regForm!: FormGroup
 
-  public actionType: 'signIn' | 'registration' = 'signIn';
+  public actionType: 'signIn' | 'signUp' = 'signIn';
 
-  constructor(private fb: FormBuilder, private auth: AuthService) { }
+  constructor(
+    private fb: FormBuilder, 
+    private authService: AuthService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
 
     this.logInForm = this.fb.group({
-        email: ['', [Validators.required, Validators.pattern('[a-z0-9]*')]],
+        username: ['', [Validators.required, Validators.pattern('[A-Za-z0-9]{1,15}')]],
         password: ['', [Validators.required, Validators.minLength(6)]]
     });
 
     this.regForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern('[A-Za-z ]{1,32}')]],
-      surname: ['', [Validators.required, Validators.pattern('[A-Za-z ]{1,32}')]],
-      nickname:  ['', [Validators.required, Validators.pattern('[a-z0-9*]{1,15}')]],
+      fullname: ['', [Validators.required, Validators.pattern("^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)")]],
+      nickname:  ['', [Validators.required, Validators.pattern('[A-Za-z0-9*]{1,15}')]],
       email: ['', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
-      phone: ['', [Validators.required, Validators.pattern('[0-9]*')]],
       password: ['', [Validators.required, Validators.minLength(6)]]
   });
 }
 
   changeActionType():void {
-
     if(this.actionType === 'signIn') {
-      this.actionType = 'registration';
+      this.actionType = 'signUp';
     } else {
       this.actionType = 'signIn';
     }
   }
 
-    login(){
-    console.log(this.logInForm.value)
+  login() {
+    const creds = {
+      username: this.logInForm.value.username,
+      password: this.logInForm.value.password
+    };
+
+    this.authService.login(creds).subscribe(data => {
+      if (data.access_token) {
+        localStorage.setItem('token', data.access_token);
+        this.router.navigate(['/home']);
+      } else {
+        console.log('error'); //next it should be toast error
+      }
+    });
   }
 
-  register() {
-    console.log(this.regForm.value)
-  }
+  signUp() {
+    const creds = {
+      fullname: this.regForm.value.fullname,
+      nickname: this.regForm.value.nickname,
+      email: this.regForm.value.email,
+      password: this.regForm.value.password,
+    };
 
-  numberOnly(event: { which: any; keyCode: any; }): boolean {
-    const charCode = (event.which) ? event.which : event.keyCode;
-
-    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
-      return false;
-    }
-    return true;
+    this.authService.signUp(creds).subscribe(data => {
+      if (data.access_token) {
+      localStorage.setItem('token', data.access_token);
+      this.router.navigate(['/home']);
+      } else {
+        console.log('error'); //next it should be toast error
+      }
+    });
   }
 }
