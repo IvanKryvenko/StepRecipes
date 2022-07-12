@@ -2,24 +2,22 @@
 
   <h1 class="heading-form">Log in</h1>
 
-  <input  formControlName="email" placeholder="Login" class="login-input">
+  <input  formControlName="username" placeholder="Login" class="login-input">
   <input  type="password" formControlName="password" placeholder="Password" class="password-input">
 
   <button type="submit" class="btn-login" [disabled] = '!this.logInForm.valid'>Log in</button>
   <button type="button" class="changeAction-btn" (click)="changeActionType()" *ngIf="actionType === 'signIn'">Don't have an account?</button>
 </form>
 
-<form [formGroup]="regForm" (ngSubmit)= 'register()' class="regForm" *ngIf="actionType === 'registration' ">
+<form [formGroup]="regForm" (ngSubmit)= 'signUp()' class="regForm" *ngIf="actionType === 'signUp' ">
   
   <h1 class="heading-form">Registration</h1>
 
-  <input  formControlName="name" placeholder="Name" class="reg-input">
-  <input  formControlName="surname" placeholder="Surname" class="reg-input">
+  <input  formControlName="fullname" placeholder="Full name" class="reg-input">
   <input  formControlName="nickname" placeholder="Nickname" class="reg-input">
   <input  formControlName="email" placeholder="Email" class="reg-input">
-  <input (keypress)="numberOnly($event)" type="text" formControlName="phone" placeholder="Phone" class="reg-input">
   <input  type="password" formControlName="password" placeholder="Password" class="password-input">
 
   <button type="submit" class="btn-register" [disabled] = '!this.regForm.valid'>Register</button>
-  <button type="button" class="changeAction-btn" (click)="changeActionType()" *ngIf="actionType === 'registration' ">Sign In</button>
+  <button type="button" class="changeAction-btn" (click)="changeActionType()" *ngIf="actionType === 'signUp' ">Sign In</button>
 </form>
