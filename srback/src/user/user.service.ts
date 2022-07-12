@@ -22,12 +22,12 @@ export class UserService {
             if (
                 (
                     await this.userModel.find({
-                        nickname: createUserDto.username,
+                        username: createUserDto.username,
                     })
                 ).length > 0
             ) {
                 return {
-                    message: 'User with such nickname already exist',
+                    message: 'User with such nickname already exist'
                 };
             } else if (
                 (
