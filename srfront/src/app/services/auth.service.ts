@@ -33,9 +33,9 @@ export class AuthService {
     const headers = new HttpHeaders();
 
     const params = new HttpParams()
-      .set('fullname', creds.fullname)
-      .set('nickname', creds.nickname)
-      .set('email', creds.email)
+      .set('fullName', creds.fullname)
+      .set('username', creds.nickname)
+      .set('emailAddress', creds.email)
       .set('password', creds.password);
 
     return this.http.post('http://localhost:3000/user', params, {headers});
