@@ -1,0 +1,21 @@
+<div class="card-body">
+  <img class="card-image" src="{{ imgSrc }}" alt="card image">
+  <span class="card-favorite material-icons-outlined">favorite_border</span>
+  <div class="description-wrapper">
+
+    <h2 class="card-header">{{ title }}</h2>
+
+    <div class="card-description">
+      <div class="card-description-icons">
+        <span class="card-icon card-likes material-icons-outlined">favorite</span>
+        <span class="card-description-text"> - {{ likes }}</span>
+      </div>
+
+      <div class="card-description-icons">
+        <span class="card-icon card-timer material-icons-outlined">timer</span>
+        <span class="card-description-text"> {{ time }} min</span>
+      </div>
+    </div>
+
+  </div>
+</div>

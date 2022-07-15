@@ -1,0 +1,74 @@
+@import "../../../variables";
+
+.card-body {
+  background-color: $white;
+  border-radius: 1.875rem;
+  background-color: $white;
+  width: 19.438rem;
+  height: 25.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+  box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+}
+
+.card-image {
+  width: 19.438rem;
+  height: 19.188rem;
+}
+
+.card-header {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.025rem;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 0.625rem;
+  color: $black;
+  font-weight: $semi-bold-font;
+  position: relative;
+}
+
+.card-favorite {
+  background-color: $white;
+  display: inline;
+  padding: 1.188rem 1.188rem;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  top: -1.25rem;
+  margin-left: 1.25rem;
+  color: $purple-icon;
+  cursor: pointer;
+  box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+  justify-content: center;
+}
+
+.description-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-description {
+  display: flex;
+  justify-content: center;
+}
+
+.card-description-icons {
+  width: 6.25rem;
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 1.063rem;
+  color: $purple-icon-light;
+  position: relative;
+  top: 0.188rem;
+}
+
+.card-description-text {
+  font-size: 0.813rem;
+  font-weight: $semi-light-font;
+  color: $grey;
+}
