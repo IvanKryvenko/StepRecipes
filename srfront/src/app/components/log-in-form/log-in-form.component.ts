@@ -62,9 +62,9 @@ export class LogInFormComponent {
 
   signUp() {
     const creds = {
-      fullname: this.regForm.value.fullname,
-      nickname: this.regForm.value.nickname,
-      email: this.regForm.value.email,
+      fullName: this.regForm.value.fullname,
+      username: this.regForm.value.nickname,
+      emailAddress: this.regForm.value.email,
       password: this.regForm.value.password,
     };
 
