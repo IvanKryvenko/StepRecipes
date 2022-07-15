@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router'
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-
+import { CardRecipeComponent } from 'src/app/components/card-recipe/card-recipe.component';
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    CardRecipeComponent
   ],
   imports: [
     CommonModule,

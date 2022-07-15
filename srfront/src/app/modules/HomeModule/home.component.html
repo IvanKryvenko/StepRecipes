@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div class="wrapper">
+    <app-card-recipe *ngFor="let recipe of recipeList"
+        [imgSrc]="recipe.imgSrc"
+        [time]="recipe.time"
+        [likes]="recipe.likes"
+        [title]="recipe.title"
+    > 
+    </app-card-recipe>
+</div>
