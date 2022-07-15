@@ -7,6 +7,7 @@ import * as bcrypt from 'bcrypt';
 import { v4 as uuidv4 } from 'uuid';
 import { JwtService } from '@nestjs/jwt';
 import { GetUserDto } from './dto/get-user.dto';
+import { USER_ALREADY_EXIST_EMAIL, USER_ALREADY_EXIST_NICKNAME } from 'src/errors';
 
 @Injectable()
 export class UserService {
@@ -27,7 +28,8 @@ export class UserService {
                 ).length > 0
             ) {
                 return {
-                    message: 'User with such nickname already exist'
+                    status: 409,
+                    message: USER_ALREADY_EXIST_NICKNAME
                 };
             } else if (
                 (
@@ -37,7 +39,8 @@ export class UserService {
                 ).length > 0
             ) {
                 return {
-                    message: 'User with such email already exist',
+                    status: 409,
+                    message: USER_ALREADY_EXIST_EMAIL
                 };
             }
 
@@ -74,17 +77,21 @@ export class UserService {
     }
 
     async getUserData(id: string): Promise<GetUserDto> {
-        const user = await this.userModel.findOne({ id: id });
+        try {
+            const user = await this.userModel.findOne({ id: id });
 
-        const userData = {
-            id,
-            username: user.username,
-            emailAddress: user.emailAddress,
-            imageUrl: user.imageUrl,
-            fullName: user.fullName,
-        };
+            const userData = {
+                id,
+                username: user.username,
+                emailAddress: user.emailAddress,
+                imageUrl: user.imageUrl,
+                fullName: user.fullName,
+            };
 
-        return userData;
+            return userData;
+        } catch(err) {
+            throw new Error(err);
+        }
     }
 
     // findAll() {
@@ -92,7 +99,11 @@ export class UserService {
     // }
 
     async findOne(nickname: string): Promise<User> {
-        return await this.userModel.findOne({ nickname: nickname });
+        try {
+            return await this.userModel.findOne({ nickname: nickname });
+        } catch(err) {
+            throw new Error(err);
+        } 
     }
 
     // update(id: number, updateUserDto: UpdateUserDto) {
