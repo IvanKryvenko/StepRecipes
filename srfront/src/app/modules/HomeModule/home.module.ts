@@ -6,11 +6,13 @@ import { RouterModule } from '@angular/router'
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CardRecipeComponent } from 'src/app/components/card-recipe/card-recipe.component';
+import { RecipeListComponent } from 'src/app/components/recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    CardRecipeComponent
+    CardRecipeComponent,
+    RecipeListComponent
   ],
   imports: [
     CommonModule,

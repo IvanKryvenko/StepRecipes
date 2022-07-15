@@ -6,15 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card-recipe.component.scss']
 })
 
-export class CardRecipeComponent implements OnInit {
+export class CardRecipeComponent {
   @Input() imgSrc: string = '';
   @Input() time: number = 0;
   @Input() likes: number = 0;
   @Input() title: string = '';
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
