@@ -1,10 +1,7 @@
 @import "../../../variables";
 
-body {
-  background-color: $background-color;
-}
-
 .wrapper {
-  padding-top: 2.5rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  background-color: $background-color;
 }
