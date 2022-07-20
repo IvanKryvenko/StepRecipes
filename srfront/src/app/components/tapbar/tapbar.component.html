@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="nav-panel">
+    <div *ngFor="let item of navItems" 
+          (click)="setActiveItem()" class="nav-item">
+      <span [class.item-active]="item.route === navItemRoute"></span>
+
+      <a [routerLink]="item.route" class="item-icon material-icons-outlined">{{item.icon}}</a>
+
+      <span class="item-title" [class.active]="item.route === navItemRoute">{{item.title}}</span>
+    </div>
+  </div>
+</div>
+  
