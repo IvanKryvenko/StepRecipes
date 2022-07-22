@@ -7,18 +7,26 @@ import { MainComponent } from './main.component';
 
 import { HomeModule } from '../HomeModule/home.module';
 import { UserModule } from '../UserModule/user.module';
+import { TapbarComponent } from 'src/app/components/tapbar/tapbar.component';
+import { FavouriteComponent } from 'src/app/components/favourite/favourite.component';
+import { SearchComponent } from 'src/app/components/search/search.component';
+import { WishListComponent } from 'src/app/components/wish-list/wish-list.component';
 
 
 @NgModule({
   declarations: [ 
-    MainComponent
+    MainComponent,
+    TapbarComponent,
+    SearchComponent,
+    WishListComponent,
+    FavouriteComponent,
   ],
   imports: [
     CommonModule,
     MainRoutingModule,
     HomeModule,
     UserModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [],
   bootstrap: [MainComponent]
