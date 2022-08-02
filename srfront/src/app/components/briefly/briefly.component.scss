@@ -1,0 +1,102 @@
+@import '../../../variables';
+
+.wrapper {
+    margin-top: 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: $bold-font-1;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-description-icons {
+    width: 6.25rem;
+    text-align: center;
+}
+
+.recipe-icon {
+    font-size: 1.063rem;
+    color: $purple-icon-light;
+    position: relative;
+    top: 0.188rem;
+}
+
+.recipe-description-text {
+    font-size: 0.813rem;
+    font-weight: $semi-light-font;
+    color: $grey;
+}
+
+.container { 
+    display: flex;
+    justify-content: center;
+}
+
+.step-list {
+    clear: both;
+    padding-left: 2rem;
+}
+
+.step { 
+    padding-left: 3rem;
+    padding-right: 1rem;
+}
+
+.step-list {
+    li {
+        margin: 2em 0;
+        position: relative;
+        counter-increment: item;
+
+        &::before {
+            content: counter(item);
+            background: $purple-light;
+            color: $white;
+            font-size: 1em;
+            font-weight: $bold-font-1;
+            border-radius: 0 0.9rem 0.9rem 0;
+            font-size: 1.5rem;
+            text-align: center;
+            padding-top: 0.4rem;
+            padding-left: 1rem;
+            margin-top: 0.3rem;
+            left: -2rem;
+            top: -0.65rem;
+            height: 2.1rem;
+            width: 2.1rem;
+            position: absolute;
+            transition: all 0.2s ease-in-out;
+            z-index: -1;
+        }
+    }
+}
+
+@media (min-width: 33rem) {
+    .step-list {
+        li {
+            &::before {
+                border-radius: 50%;
+                font-size: 1rem;
+                height: 2rem;
+                margin-left: 2.5%;
+                padding-left: 0;
+                padding-top: 0;
+                top: -0.15rem;
+                width: 2rem;
+                z-index: -1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+}

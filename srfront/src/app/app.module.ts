@@ -8,6 +8,7 @@ import { AuthModule } from './modules/AuthModule/auth.module';
 import { HomeModule } from './modules/HomeModule/home.module';
 import { MainModule } from './modules/MainModule/main.module';
 import { UserModule } from './modules/UserModule/user.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UserModule } from './modules/UserModule/user.module';
     HomeModule,
     UserModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,23 @@
+<div class="wrapper">
+    <span class="material-icons-outlined close-btn" (click)="closeCard()">close</span>
+
+    <span class="material-icons-outlined favourite-btn">favorite</span>
+
+    <div class="detail-wrapper">
+        <img src="../../../assets/image-assets/banana.jpg" class="detail-img" alt="dish">
+
+        <mat-tab-group>
+            <mat-tab label="Ingredients"> 
+                <app-ingredients> </app-ingredients> 
+            </mat-tab>
+
+            <mat-tab label="Briefly" class="mat-tab-label-active">
+                <app-briefly> </app-briefly>
+            </mat-tab>
+
+            <mat-tab label="Let's cook"> 
+                <app-cooking> </app-cooking>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

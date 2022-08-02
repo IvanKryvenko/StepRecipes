@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Recipe } from 'src/app/interfaces/recipe';
 
 @Component({
@@ -7,15 +7,13 @@ import { Recipe } from 'src/app/interfaces/recipe';
   styleUrls: ['./home.component.scss']
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   recipeList: Recipe[] = [
     {imgSrc: '../../../assets/image-assets/pumkin.png', time: 15, likes: 15, title: 'pumkin soup' },
     {imgSrc: '../../../assets/image-assets/tosts.png', time: 5, likes: 125, title: 'banana toast' }
   ];
 
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  constructor() { }
 
 }

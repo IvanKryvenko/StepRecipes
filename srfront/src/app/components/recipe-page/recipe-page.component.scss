@@ -1,0 +1,155 @@
+@import '../../../variables';
+
+.wrapper {
+    background-color: $background-color;
+    height: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    color: $purple-icon;
+    width: 2.625rem;
+    height: 2.625rem;
+    background-color: $white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+    right: 0;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.favourite-btn {
+    position: absolute;
+    color: $purple-icon;
+    width: 3.25rem;
+    height: 3.25rem;
+    background-color: $white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+    left: 0;
+    margin-top: 18rem;
+    margin-left: 2rem;
+    cursor: pointer;
+}
+
+.detail-img {
+    width: 100%;
+    height: 20rem;
+}
+
+.detail-wrapper {
+    padding-bottom: 2rem;
+    background-color: $background-color;
+}
+
+.detail-panel {
+    border-radius: 2rem;
+    background-color: $grey2;
+    width: 18.75rem;
+    margin-top: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    justify-content: space-around;
+    padding: 0.188rem;
+    box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+}
+
+.panel-item {
+    margin-top: auto;
+    margin-bottom: auto;
+    color: $grey;
+    font-size: 0.688rem;
+    text-transform: uppercase;
+    font-weight: $medium-font;
+    
+    &.active {
+        background-color: $white;
+        border-radius: inherit;
+        padding: 0.9rem;
+        color: $black;
+    }
+}
+
+:host {
+    ::ng-deep {
+        .mat-tab-labels {
+            border-radius: 2rem;
+            background-color: $grey2;
+            width: 80%;
+            margin-top: 1.5rem;
+            margin-right: auto;
+            margin-left: auto;
+            display: flex;
+            justify-content: space-around;
+            padding: 0.188rem;
+            box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+        }
+
+        .mat-tab-label-content {
+            margin-top: auto;
+            margin-bottom: auto;
+            color: $grey;
+            font-size: 0.688rem;
+            text-transform: uppercase;
+            font-weight: $medium-font;
+        }
+
+        .mat-tab-label-active {
+            background-color: $white;
+            border-radius: inherit;
+            padding: 0.9rem;
+            color: $black;
+            opacity: 1;
+            
+            &:focus {
+                background-color: $white;
+            }
+        }
+
+        .mat-ink-bar {
+            display: none;
+        }
+
+        .mat-ripple {
+            border-radius: inherit;
+        }
+
+        .mat-tab-label {
+            min-width: 33.3%;
+            border-radius: inherit;
+            
+        }
+
+        .cdk-mouse-focused {
+            background-color: transparent;
+        }
+
+        .mat-tab-header {
+            border-bottom: none;
+        }
+
+        .cdk-focused {
+            background-color: transparent;
+        }
+
+        .mat-ripple-element {
+            display: none;
+        }
+
+        .mat-tab-group {
+            min-height: 20rem;
+        } 
+
+        .mat-tab-body-content {
+            overflow: hidden;
+        }  
+    }
+}

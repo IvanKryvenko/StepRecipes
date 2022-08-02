@@ -1,0 +1,115 @@
+@import '../../../variables';
+
+.detail-servings {
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: $white;
+    border-radius: 1.3rem;
+    height: 5.9rem;
+    margin-top: 1.5rem;
+}
+
+.detail-btn {
+    width: 100%;
+    color: $white;
+    background-color: $violet;
+    border: none;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    padding: 0.8rem;
+    text-transform: uppercase;
+    font-weight: $medium-font;
+    letter-spacing: 0.125rem;
+    cursor: pointer;
+}
+
+.info-item {
+    color: $grey;
+    font-weight: $medium-font;
+    font-size: 0.8rem;
+        &.icon {
+            border-radius: 50%;
+            width: 2.7rem;
+            height: 2.7rem;
+            text-align: center;
+            background-color: $light-violet;
+            color: $violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.3rem;
+    }
+}
+
+.servings-info {
+    width: 8.438rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0.313rem;
+    padding-left: 0;
+}
+
+.detail-ingredients {
+    background-color: $white;
+    margin-top: 0.6rem;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 1.3rem;
+    margin-bottom: 1rem; 
+    box-shadow: 0.25rem -0.063rem 1.375rem -0.063rem $shadow;
+}
+
+.detail-calories {
+    display: flex;
+    padding: 0.2rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 11.25rem;
+    font-weight: $medium-font;
+    font-size: 0.8rem;
+    color: $grey;
+        .icon {
+            background-color: $purple-light-2;
+            color: $violet;
+            width: 2.7rem;
+            height: 2.7rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;    
+            justify-content: center;
+            width: 2.7rem;
+            font-size: 1.3rem;
+    }
+}
+
+.ingredients-list {
+    font-weight: $medium-font;
+    font-size: 0.8rem;
+    color: $grey;
+    text-align: left;
+}
+
+.list-item {
+    border-top: 0.5px solid $grey2;
+    letter-spacing: -0.5px;
+    font-weight: $medium-font;
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    
+    &::before {
+        content: '\25CF ';
+        font-size: 0.7rem;
+        color: $violet;
+        margin-right: 1.5rem;
+    }
+        span {
+            display: block;
+            width: 15px;
+            margin: 0px;
+            font-weight: $bold-font-1;
+    }
+}
