@@ -1,0 +1,69 @@
+@import '../../../variables';
+
+.wrapper {
+    text-align: center;
+}
+
+.btn-expand {
+    outline: none;
+    border: none;
+    background-color: $violet;
+    cursor: pointer;
+    color: $white;
+    text-transform: uppercase;
+    font-weight: $bold-font-1;
+    padding: 1rem 30%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem; 
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.btn-icon {
+    margin-right: 1rem;
+}
+
+iframe {
+    max-width: 100%;
+    max-height: 18.75rem;
+    margin-top: 2rem;
+}
+
+.container-steps {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.step-container { 
+    counter-reset: steps-counter;
+}
+
+.step-text {
+    text-align: justify;
+    margin-top: 1rem;
+}
+
+.step-title {
+    counter-increment: steps-counter;
+    margin-top: 1rem;
+    
+    &::after {
+        content: " " counter(steps-counter) ;
+        font-weight: $bold-font-1;
+        bottom: 1.5rem;
+        left: 1rem;
+        font-weight: $bold-font-2;
+    }
+}
+
+.step-img {
+    width: 100%;
+    margin-top: 1rem;
+}

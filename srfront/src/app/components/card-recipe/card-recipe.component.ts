@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-recipe',
@@ -12,6 +13,14 @@ export class CardRecipeComponent {
   @Input() likes: number = 0;
   @Input() title: string = '';
 
-  constructor() { }
+  constructor(public router: Router) { }
 
+
+  openCard($myParam: string = ''): void {
+    const navigationDetails: string[] = ['/detail']; //In the future we can create a separate file with routes strings
+    if($myParam.length) {
+      navigationDetails.push($myParam);
+    }
+    this.router.navigate(navigationDetails);
+  }
 }
