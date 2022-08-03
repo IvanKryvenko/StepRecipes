@@ -17,7 +17,7 @@ export class CardRecipeComponent {
 
 
   openCard($myParam: string = ''): void {
-    const navigationDetails: string[] = ['/detail'];
+    const navigationDetails: string[] = ['/detail']; //In the future we can create a separate file with routes strings
     if($myParam.length) {
       navigationDetails.push($myParam);
     }
